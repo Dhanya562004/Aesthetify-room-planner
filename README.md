@@ -1,84 +1,149 @@
 # 🛋️ Aesthetify Room Planner
 
-Aesthetify Room Planner is an interactive, web-based interior design tool that allows users to design, organize, and visualize their dream room layout in real-time. Built with **React**, **Vite**, and **Tailwind CSS**, it offers a lightweight and highly responsive workspace to prototype furniture arrangements easily.
+Aesthetify Room Planner is an interactive, web-based interior design workspace that allows users to design, arrange, and visualize room layouts in real-time. Designed to be lightweight yet feature-rich, it provides an intuitive drag-and-drop playground for arranging furniture, scaling assets, adjusting room lighting, and exporting completed designs.
 
-Whether you're moving into a new apartment or redesigning your current space, Aesthetify lets you drag, drop, resize, and lock pieces of furniture onto a customizable room backdrop, giving you complete control over your interior visualization.
+---
+
+## 📖 Table of Contents
+1. [Overview](#-overview)
+2. [Features](#-features)
+3. [Technologies Used](#-technologies-used)
+4. [Project Structure](#-project-structure)
+5. [Installation & Setup](#-installation--setup)
+6. [Usage](#-usage)
+7. [Future Improvements](#-future-improvements)
+8. [Challenges & Learning](#-challenges--learning)
+9. [Contributing](#-contributing)
+10. [Author](#-author)
+
+---
+
+## 🔍 Overview
+
+When planning a room layout or relocating to a new space, visualizing how furniture fits into the layout can be a tedious chore. **Aesthetify Room Planner** bridges this gap by offering a simple, visual, and highly responsive 2D staging area. 
+
+Users can upload an image of their empty room, pick furniture pieces from a curated palette, and position them. With support for rotating, flipping, resizing, and locking individual items, users can construct their exact room aesthetic, experiment with lighting environments, and save their finalized layouts.
 
 ---
 
 ## ✨ Features
 
-* **🛋️ Rich Furniture Palette:** Choose from a wide selection of furniture items including sofas, chairs, shelves, plants, mirrors, and windows.
-* **🎯 Interactive Canvas:** Add items to the room canvas and position them anywhere using fluid drag-and-drop interactions.
-* **📏 Real-Time Customization:** 
-  * **Resize:** Scale furniture to match the proportions of your room (maintains aspect ratio).
-  * **Rotate:** Spin items in 90-degree increments to find the perfect orientation.
-  * **Flip:** Mirror furniture horizontally to fit specific corners.
-* **🔒 Layout Lock/Unlock:** Lock individual furniture pieces in place to prevent accidental dragging, resizing, or deletion while you work on other parts of the room.
-* **🖼️ Custom Room Backgrounds:** Upload your own room photo (JPEG/PNG) to plan on top of your actual space, or use the beautiful default room template.
-* **💡 Ambient Lighting Adjustments:** Toggle room lighting modes (**Normal**, **Dim**, and **Dark**) to see how your design looks during different times of the day.
-* **💾 Export Layout:** Save your finished room design as a high-quality PNG image directly to your device with a single click.
+* **🎨 Interactive Canvas:** Drop items into the canvas area and position them freely with drag-and-drop mechanics.
+* **📏 Accurate Proportions (Resize & Scale):** Expand or shrink furniture to mirror actual size ratios while maintaining aspect ratio to prevent image distortion.
+* **🔄 Advanced Transform Controls:** 
+  * **Rotate:** Rotate furniture 90° clockwise to align against any wall.
+  * **Flip:** Horizontally mirror assets to adjust orientation.
+* **🔒 Element Lock System:** Prevent accidental movement or edits of finalized furniture placements with a toggleable lock (`🔒` / `🔓`).
+* **🖼️ Custom Backdrops:** Upload your own room images (JPEG, PNG, WebP) to test layout planning on your real-world space, or use the default room setting.
+* **💡 Ambient Lighting Adjustments:** Toggle room brightness modes (**Normal**, **Dim**, and **Dark**) to preview how the room atmosphere changes between night and day.
+* **📥 Layout Export:** Export the complete canvas layout as a high-quality PNG image file directly to your system.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-* **Frontend Framework:** React 18
-* **Build Tool:** Vite
-* **Styling:** Tailwind CSS (for modern UI styling)
-* **Draggable Elements:** `react-draggable`
-* **Resizable Container:** `react-resizable`
-* **Exporting Engine:** `html2canvas`
+* **React 18:** Component-based UI rendering and component state management.
+* **Vite:** High-performance, ultra-fast frontend build tooling.
+* **Tailwind CSS:** Modern utility-first CSS framework for clean and responsive UI layouts.
+* **React Draggable:** Handles precise positioning and bounding box movement logic.
+* **React Resizable:** Provides scalable handles on active layout components.
+* **Html2Canvas:** Compiles and renders DOM nodes into custom image files for download.
 
 ---
 
-## 🚀 Getting Started
+## 📂 Project Structure
 
-Follow these steps to run the application locally on your computer.
+```
+Aesthetify-room-planner/
+├── public/                     # Static assets & public resources
+│   └── furniture/              # High-quality furniture images (.png, .jpg, .jpeg)
+├── src/                        # Main source directory
+│   ├── components/             # Reusable React UI Components
+│   │   ├── DraggableItem.jsx   # Handles dragging, resizing, locking, flipping, and rotating items
+│   │   ├── FurniturePalette.jsx# Component menu containing selectable furniture assets
+│   │   └── RoomCanvas.jsx      # Canvas containing the background and active furniture items
+│   ├── App.jsx                 # Central logic, state container, and layout manager
+│   ├── index.css               # Global stylesheets with Tailwind CSS imports
+│   └── main.jsx                # React application entry point
+├── .gitignore                  # Excluded folders/files for Git tracking
+├── package.json                # Project dependencies and script scripts
+├── tailwind.config.js          # Tailwind CSS design configurations
+└── vite.config.js              # Vite compiler configuration
+```
 
-### Prerequisites
+---
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+## 🚀 Installation & Setup
 
-### Installation
+Ensure you have [Node.js](https://nodejs.org/) (v16 or higher recommended) installed.
 
-1. **Clone the repository:**
+1. **Clone the remote repository:**
    ```bash
    git clone https://github.com/Dhanya562004/Aesthetify-room-planner.git
    cd Aesthetify-room-planner
    ```
 
-2. **Install the dependencies:**
+2. **Install application dependencies:**
    ```bash
    npm install
    ```
 
-### Running Locally
+3. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open the local IP/port (usually `http://localhost:5173`) in your web browser.
 
-To start the development server:
-```bash
-npm run dev
-```
-Once started, open [http://localhost:5173](http://localhost:5173) in your web browser to view the application.
-
-### Building for Production
-
-To create an optimized production build of the project:
-```bash
-npm run build
-```
-The output files will be generated in the `dist/` directory.
+4. **Build the production build:**
+   ```bash
+   npm run build
+   ```
 
 ---
 
-## 📖 How to Use
+## 💡 Usage
 
-1. **Select Room Backdrop:** Click the file input at the top of the canvas to upload a picture of your own empty room, or use the default room picture provided.
-2. **Add Furniture:** Click any icon in the top furniture palette to place it onto the canvas.
-3. **Arrange & Scale:** 
+1. **Upload Backdrop:** Click the file uploader button above the canvas to upload your room picture, or use the pre-loaded default room background.
+2. **Add Furniture:** Tap or click on any asset in the palette bar (sofa, shelf, plants, window, etc.) to place it onto the workspace.
+3. **Position and Transform:**
    * **Drag** the item around to position it.
-   * **Drag the resize handles** at the corners of any furniture item to scale it up or down.
-   * Use **Flip** and **↻ (Rotate)** to align items correctly against walls or other furniture.
-4. **Lock Placed Items:** Once you are satisfied with an item's position, click the **🔓 (Unlock)** button to toggle it to **🔒 (Locked)**. This prevents any further movements or edits.
-5. **Adjust Ambience:** Use the **Toggle Lighting** button at the top to simulate different times of the day (e.g. night styling in Dark mode).
-6. **Save Your Design:** Click the **Save Layout** button to download a PNG image of your customized room canvas.
+   * **Resize** the item using the corner anchors (`nw`, `ne`, `se`, `sw`).
+   * Apply **Flip** and **↻ (Rotate)** to align items.
+4. **Lock Layouts:** Click the `🔓` unlock icon to change it to `🔒` locked. This locks the element, protecting it from movement, resizing, or deletion.
+5. **Adjust Lighting:** Click the **Toggle Lighting** button to preview how the configuration shifts under day, twilight, or evening settings.
+6. **Export Design:** Click the **Save Layout** button to download a PNG image of your plan.
+
+---
+
+## 🔮 Future Improvements
+
+* **🕶️ 3D & AR Visualization:** Incorporate `@react-three/fiber` and `@google/model-viewer` (already present in the dependencies) to toggle between a 2D floorplan and an immersive 3D/AR preview.
+* **💾 Design Saving & Cloud Sync:** Build full persistence to allow users to save multiple room layouts locally via `localStorage` or sync designs to an online database.
+* **💥 Collision Detection:** Implement bounding box collision logic to prevent items from overlap-clipping or escaping canvas boundaries.
+* **🎨 Palette Color Customization:** Allow users to dynamically apply custom colors/textures to furniture items.
+
+---
+
+## 🧠 Challenges & Learning
+
+* **Combining Draggable and Resizable Logic:** Integrating `react-draggable` and `react-resizable` presented challenges where resize actions trigger drag events. Solving this required overlaying controls and managing state flags to separate movement from resizing.
+* **Maintaining Aspect Ratios:** Ensuring furniture assets scale proportionally (instead of stretching skew-wise) was critical to preserving realism in the layouts.
+* **Capturing Dynamic Canvas Contents:** Using `html2canvas` on components using CSS 2D transformations (rotation and scales) required careful configurations to guarantee that exported PNG files matched the user's canvas.
+
+---
+
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## ✍️ Author
+
+* **Dhanya** - [@Dhanya562004](https://github.com/Dhanya562004)
