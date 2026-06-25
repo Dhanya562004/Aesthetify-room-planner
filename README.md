@@ -12,7 +12,11 @@ Aesthetify Room Planner is an interactive, web-based interior design workspace t
 * **Export Layout:** Export the completed canvas layout as a high-quality PNG image file directly to your system.
 
 ## Technologies Used
-* **Frontend:** React.js (v18), React Draggable, React Resizable, Html2Canvas, Tailwind CSS, Vite
+* **React.js**
+* **Tailwind CSS**
+* **JavaScript**
+* **AR-inspired Design**
+
 
 ## Project Structure
 ```
